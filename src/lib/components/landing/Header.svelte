@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Server, Menu } from 'lucide-svelte';
+	import { Server } from 'lucide-svelte';
+	import { appConfig } from '../../../shared/config';
 </script>
 
 <header class="sticky top-0 z-50 w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur-lg">
@@ -21,14 +22,11 @@
 
 		<div class="flex items-center gap-4">
 			<a
-				href="http://localhost:3000/login"
+				href={`${appConfig.CONSOLE_URL}/login`}
 				class="rounded-md bg-brand-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-500"
 			>
 				Запустить консоль
 			</a>
-			<button class="md:hidden text-slate-400 hover:text-white">
-				<Menu class="h-6 w-6" />
-			</button>
 		</div>
 	</div>
 </header>

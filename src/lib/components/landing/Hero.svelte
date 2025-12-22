@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ArrowRight, Cpu, Zap } from 'lucide-svelte';
+	import { ArrowRight, Zap } from 'lucide-svelte';
 </script>
 
 <section class="relative overflow-hidden py-24 md:py-32">
@@ -41,7 +41,6 @@
 				class="inline-flex h-12 items-center justify-center rounded-md border border-slate-700 bg-slate-900/50 px-8 text-base font-semibold text-white transition-colors hover:bg-slate-800/80 w-full sm:w-auto"
 			>
 				Посмотреть цены
-				<Cpu class="ml-2 h-5 w-5 text-slate-400" />
 			</a>
 		</div>
 
