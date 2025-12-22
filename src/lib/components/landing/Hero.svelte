@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { ArrowRight, Zap } from 'lucide-svelte';
+	import { appConfig } from '../../../shared/config';
 </script>
 
 <section class="relative overflow-hidden py-24 md:py-32">
@@ -30,7 +31,7 @@
 
 		<div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
 			<a
-				href="/login"
+				href={`${appConfig.CONSOLE_URL}/login`}
 				class="inline-flex h-12 items-center justify-center rounded-md bg-brand-600 px-8 text-base font-semibold text-white transition-all hover:bg-brand-500 hover:shadow-lg hover:shadow-brand-500/25 w-full sm:w-auto"
 			>
 				Найти GPU сейчас
