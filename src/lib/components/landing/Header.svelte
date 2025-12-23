@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { Server } from 'lucide-svelte';
+	import logo from '$lib/assets/logo.png';
 	import { appConfig } from '../../../shared/config';
 </script>
 
 <header class="sticky top-0 z-50 w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur-lg">
 	<div class="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
 		<a href="/" class="flex items-center gap-2 text-lg font-bold tracking-tight">
-			<Server class="h-6 w-6 text-brand-500" />
+			<img alt="Logo" src={logo} width="40" />
 			<span class="bg-linear-to-br from-white to-slate-400 bg-clip-text text-transparent">
 				YouGPU
 			</span>
