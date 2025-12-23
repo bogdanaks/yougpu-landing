@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Rocket } from 'lucide-svelte';
-	import { appConfig } from '../../../shared/config';
+	import { appConfig } from '$shared/config/app-config';
 </script>
 
 <section class="py-24 relative overflow-hidden">

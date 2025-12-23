@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { ArrowRight, Zap } from 'lucide-svelte';
-	import { appConfig } from '../../../shared/config';
+	import { appConfig } from '$shared/config/app-config';
 </script>
 
 <section class="relative overflow-hidden py-24 md:py-32">

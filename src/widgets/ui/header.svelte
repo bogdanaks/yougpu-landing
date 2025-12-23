@@ -1,6 +1,6 @@
 <script lang="ts">
 	import logo from '$lib/assets/logo.png';
-	import { appConfig } from '../../../shared/config';
+	import { appConfig } from '$shared/config/app-config';
 </script>
 
 <header class="sticky top-0 z-50 w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur-lg">

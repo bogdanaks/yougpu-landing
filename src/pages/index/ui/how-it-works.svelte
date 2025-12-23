@@ -6,7 +6,7 @@
 			id: 1,
 			title: 'Пополните баланс',
 			description:
-				'Регистрация занимает 30 секунд. Пополните счет картой или криптовалютой (USDT) без KYC и ожидания.',
+				'Используйте привычный и безопасный способ оплаты картой, чтобы получить доступ к мощностям без задержек.',
 			icon: Wallet
 		},
 		{
@@ -42,7 +42,9 @@
 			{#each steps as step, i}
 				<div class="relative flex flex-col items-center text-center group">
 					{#if i !== steps.length - 1}
-						<div class="hidden md:block absolute top-8 left-[60%] w-[80%] text-slate-800">
+						<div
+							class="hidden md:block absolute top-5 left-1/2 w-full text-slate-800 pointer-events-none"
+						>
 							<svg
 								class="w-full h-6 text-slate-800"
 								fill="none"
@@ -50,19 +52,19 @@
 								preserveAspectRatio="none"
 							>
 								<path
-									d="M0,12 L90,12"
+									d="M0,12 L95,12"
 									stroke="currentColor"
 									stroke-width="2"
 									stroke-dasharray="4 4"
 								/>
 								<path
-									d="M90,12 L85,8"
+									d="M95,12 L90,8"
 									stroke="currentColor"
 									stroke-width="2"
 									stroke-linecap="round"
 								/>
 								<path
-									d="M90,12 L85,16"
+									d="M95,12 L90,16"
 									stroke="currentColor"
 									stroke-width="2"
 									stroke-linecap="round"
@@ -73,12 +75,13 @@
 
 					<div class="relative mb-6">
 						<div
-							class="flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-900 border border-slate-800 shadow-xl transition-all duration-300 group-hover:border-brand-500/50 group-hover:shadow-brand-500/20 group-hover:-translate-y-1"
+							class="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-900 border border-slate-800 shadow-xl transition-all duration-300 group-hover:border-brand-500/50 group-hover:shadow-brand-500/20 group-hover:-translate-y-1"
 						>
 							<svelte:component this={step.icon} class="h-8 w-8 text-brand-400" />
 						</div>
+
 						<div
-							class="absolute -top-3 -right-3 flex h-8 w-8 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white border-4 border-slate-950"
+							class="absolute -top-3 -right-3 z-20 flex h-8 w-8 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white border-4 border-slate-950"
 						>
 							{step.id}
 						</div>
