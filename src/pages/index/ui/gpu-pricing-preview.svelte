@@ -1,20 +1,39 @@
 <script lang="ts">
-	import { CheckCircle2, XCircle } from 'lucide-svelte';
+	import { appConfig } from '$shared/config/app-config';
+	import { CircleCheck, CircleX } from 'lucide-svelte';
+
+	// const LANDING_MODELS = [
+	// 	'NVIDIA H100',
+	// 	'NVIDIA A100',
+	// 	'NVIDIA A6000',
+	// 	'NVIDIA RTX 4090',
+	// 	'NVIDIA V100'
+	// ];
 
 	// Это моковые данные для лендинга. В реальном приложении они могут быть динамическими.
-	const gpuModels = [
-		{ name: 'NVIDIA H100', vram: '80 GB HBM3', price: '$2.50', available: true, popular: true },
-		{ name: 'NVIDIA A100', vram: '80 GB HBM2e', price: '$1.30', available: true, popular: false },
-		{ name: 'NVIDIA A6000', vram: '48 GB GDDR6', price: '$0.60', available: true, popular: true },
-		{
-			name: 'NVIDIA RTX 4090',
-			vram: '24 GB GDDR6X',
-			price: '$0.35',
-			available: false,
-			popular: false
-		},
-		{ name: 'NVIDIA V100', vram: '32 GB HBM2', price: '$0.28', available: true, popular: false }
-	];
+	// const gpuModels = [
+	// 	{ name: 'NVIDIA H100', vram: '80 GB HBM3', price: '$2.50', available: true, popular: true },
+	// 	{ name: 'NVIDIA A100', vram: '80 GB HBM2e', price: '$1.30', available: true, popular: false },
+	// 	{ name: 'NVIDIA A6000', vram: '48 GB GDDR6', price: '$0.60', available: true, popular: true },
+	// 	{
+	// 		name: 'NVIDIA RTX 4090',
+	// 		vram: '24 GB GDDR6X',
+	// 		price: '$0.35',
+	// 		available: false,
+	// 		popular: false
+	// 	},
+	// 	{ name: 'NVIDIA V100', vram: '32 GB HBM2', price: '$0.28', available: true, popular: false }
+	// ];
+
+	type GpuModel = {
+		name: string;
+		vram: string;
+		price: string;
+		available: boolean;
+		popular: boolean;
+	};
+
+	export let gpuModels: GpuModel[] = [];
 </script>
 
 <section id="pricing" class="py-24 relative">
@@ -62,11 +81,11 @@
 								<td class="px-6 py-4 flex justify-center">
 									{#if gpu.available}
 										<div class="flex items-center text-emerald-400 text-xs font-medium">
-											<CheckCircle2 class="h-4 w-4 mr-1.5" /> В наличии
+											<CircleCheck class="h-4 w-4 mr-1.5" /> В наличии
 										</div>
 									{:else}
 										<div class="flex items-center text-slate-500 text-xs font-medium">
-											<XCircle class="h-4 w-4 mr-1.5" /> Мало
+											<CircleX class="h-4 w-4 mr-1.5" /> Мало
 										</div>
 									{/if}
 								</td>
@@ -77,7 +96,7 @@
 			</div>
 			<div class="bg-slate-900/50 p-4 text-center border-t border-slate-800">
 				<a
-					href="/login"
+					href={`${appConfig.CONSOLE_URL}/login`}
 					class="text-brand-400 hover:text-brand-300 text-sm font-medium transition-colors"
 				>
 					Посмотреть весь каталог и наличие →

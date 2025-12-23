@@ -5,11 +5,13 @@
 	import CtaSection from './ui/cta-section.svelte';
 	import HowItWorks from './ui/how-it-works.svelte';
 	import TechStack from './ui/tech-stack.svelte';
+
+	let { data } = $props();
 </script>
 
 <Hero />
 <Features />
 <HowItWorks />
 <TechStack />
-<GpuPricingPreview />
+<GpuPricingPreview gpuModels={data.gpuModels} />
 <CtaSection />
