@@ -1,4 +1,5 @@
 <script>
+	import { appConfig } from '$shared/config/app-config';
 	import { ArrowRight } from 'lucide-svelte';
 </script>
 
@@ -17,7 +18,7 @@
 		</p>
 		<div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
 			<a
-				href="/register"
+				href={`${appConfig.CONSOLE_URL}/register`}
 				class="inline-flex h-12 items-center justify-center rounded-md bg-white px-8 text-base font-bold text-brand-600 transition-all hover:bg-slate-100 hover:shadow-lg hover:scale-105 w-full sm:w-auto"
 			>
 				Создать аккаунт
