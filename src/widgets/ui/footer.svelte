@@ -55,6 +55,10 @@
 		<p class="text-sm text-slate-500">
 			© {currentYear} YouGPU. Все права защищены.
 		</p>
-		<div class="flex gap-4 mt-4 md:mt-0"></div>
+		<div class="flex flex-col text-right mt-4 md:mt-0">
+			<p class="text-sm text-slate-500">hello@yougpu.ru | +7 988 688-53-54</p>
+			<p class="text-sm text-slate-500">Аксёнов Богдан Русланович</p>
+			<p class="text-sm text-slate-500">ИНН: 081701387486</p>
+		</div>
 	</div>
 </footer>
