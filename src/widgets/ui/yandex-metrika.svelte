@@ -44,6 +44,7 @@
 			});
 		</script>
 	{/if}
+	<meta name="yandex-verification" content="6275e0eef70e8bfb" />
 </svelte:head>
 
 <noscript>
