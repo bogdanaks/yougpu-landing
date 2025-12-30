@@ -1,5 +1,5 @@
 <script lang="ts">
-	import logo from '$lib/assets/logo.png';
+	import logo from '$lib/assets/logo.svg';
 	import { appConfig } from '$shared/config/app-config';
 </script>
 

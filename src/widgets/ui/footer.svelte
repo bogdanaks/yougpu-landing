@@ -1,5 +1,5 @@
 <script lang="ts">
-	import logo from '$lib/assets/logo.png';
+	import logo from '$lib/assets/logo.svg';
 	const currentYear = new Date().getFullYear();
 </script>
 
