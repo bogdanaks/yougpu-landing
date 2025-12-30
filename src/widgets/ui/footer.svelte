@@ -57,7 +57,7 @@
 		</p>
 		<div class="flex flex-col text-right mt-4 md:mt-0">
 			<p class="text-sm text-slate-500">hello@yougpu.ru | +7 988 688-53-54</p>
-			<p class="text-sm text-slate-500">Аксёнов Богдан Русланович</p>
+			<p class="text-sm text-slate-500">ИП Аксёнов Богдан Русланович</p>
 			<p class="text-sm text-slate-500">ИНН: 081701387486</p>
 		</div>
 	</div>
