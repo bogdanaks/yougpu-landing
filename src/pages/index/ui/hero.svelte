@@ -61,7 +61,7 @@
 				<div class="mt-1 text-sm text-slate-400">Время деплоя</div>
 			</div>
 			<div>
-				<div class="text-3xl font-bold text-white">15 ₽/ч</div>
+				<div class="text-3xl font-bold text-white">30 ₽/ч</div>
 				<div class="mt-1 text-sm text-slate-400">Цены от</div>
 			</div>
 		</div>
