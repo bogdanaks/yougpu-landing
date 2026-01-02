@@ -8,10 +8,16 @@ const config = {
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',
-			fallback: 'index.html',
-			precompress: false,
+			fallback: undefined,
+			precompress: true,
 			strict: true
 		}),
+		paths: {
+			relative: false
+		},
+		prerender: {
+			handleMissingId: 'warn'
+		},
 		alias: {
 			'$app/*': 'src/app/*',
 			'$processes/*': 'src/processes/*',

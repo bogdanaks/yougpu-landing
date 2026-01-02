@@ -9,7 +9,7 @@ ARG PUBLIC_CONSOLE_URL
 ENV PUBLIC_CONSOLE_URL=$PUBLIC_CONSOLE_URL
 RUN npm run build
 
-FROM nginx:alpine
+FROM fholzer/nginx-brotli
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/build /usr/share/nginx/html
