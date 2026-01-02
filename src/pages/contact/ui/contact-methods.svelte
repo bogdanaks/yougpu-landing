@@ -26,8 +26,8 @@
 			icon: Mail,
 			title: 'Email',
 			description: 'Для B2B партнеров, юридических запросов и прессы.',
-			action: 'hello@yougpu.com',
-			link: 'mailto:hello@yougpu.com',
+			action: 'hello@yougpu.ru',
+			link: 'mailto:hello@yougpu.ru',
 			primary: false,
 			color: 'text-emerald-400',
 			bg: 'bg-emerald-500/10 border-emerald-500/20'

@@ -155,8 +155,8 @@
 						<li>
 							<span>
 								Email для юридических запросов: <a
-									href="mailto:legal@yougpu.com"
-									class="text-blue-600 hover:underline">legal@yougpu.com</a
+									href="mailto:legal@yougpu.ru"
+									class="text-blue-600 hover:underline">legal@yougpu.ru</a
 								>
 							</span>
 						</li>

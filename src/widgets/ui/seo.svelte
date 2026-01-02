@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { siteConfig } from '$shared/config/seo-config';
+	import { siteConfig } from '$shared/config/site-config';
 
 	let {
 		title = '',
@@ -11,7 +11,7 @@
 	} = $props();
 
 	let metaTitle = $derived(
-		title ? `${title} | ${siteConfig.name}` : `${siteConfig.name} — Аренда GPU серверов для AI и ML`
+		title ? `${title} | ${siteConfig.name}` : `${siteConfig.name} — Аренда GPU серверов`
 	);
 
 	let currentUrl = $derived(page.url.href);

@@ -1,6 +1,7 @@
 <script lang="ts">
-	import YandexMetrika from '$widgets/ui/yandex-metrika.svelte';
 	import '../app.css';
+	import YandexMetrika from '$widgets/ui/yandex-metrika.svelte';
+	import SeoBreadcrumbs from '$widgets/ui/seo-breadcrumbs.svelte';
 	import favicon from '$lib/assets/logo.svg';
 
 	let { children } = $props();
@@ -11,4 +12,5 @@
 </svelte:head>
 
 <YandexMetrika />
+<SeoBreadcrumbs />
 {@render children()}
