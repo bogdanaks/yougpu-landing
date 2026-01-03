@@ -7,38 +7,48 @@
 		contact: 'Контакты'
 	};
 
-	$: pathSegments = $page.url.pathname.split('/').filter((s) => s !== '');
+	let schema: Record<string, any> | null = null;
 
-	$: breadcrumbList = [
-		{
-			'@type': 'ListItem',
-			position: 1,
-			name: 'Главная',
-			item: siteConfig.url
-		},
-		...pathSegments.map((segment, index) => {
-			const path = `${siteConfig.url}/${pathSegments.slice(0, index + 1).join('/')}`;
+	$: {
+		const pathSegments = $page.url.pathname.split('/').filter((s) => s !== '');
 
-			const name =
-				ROUTE_NAMES[segment] ||
-				segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' ');
+		if (pathSegments.length === 0) {
+			schema = null;
+		} else {
+			const breadcrumbList = [
+				{
+					'@type': 'ListItem',
+					position: 1,
+					name: 'Главная',
+					item: siteConfig.url
+				},
+				...pathSegments.map((segment, index) => {
+					const path = `${siteConfig.url}/${pathSegments.slice(0, index + 1).join('/')}`;
 
-			return {
-				'@type': 'ListItem',
-				position: index + 2,
-				name: name,
-				item: path
+					const name =
+						ROUTE_NAMES[segment] ||
+						segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' ');
+
+					return {
+						'@type': 'ListItem',
+						position: index + 2,
+						name: name,
+						item: path
+					};
+				})
+			];
+
+			schema = {
+				'@context': 'https://schema.org',
+				'@type': 'BreadcrumbList',
+				itemListElement: breadcrumbList
 			};
-		})
-	];
-
-	$: schema = {
-		'@context': 'https://schema.org',
-		'@type': 'BreadcrumbList',
-		itemListElement: breadcrumbList
-	};
+		}
+	}
 </script>
 
 <svelte:head>
-	{@html `<script type="application/ld+json">${JSON.stringify(schema)}</script>`}
+	{#if schema}
+		{@html `<script type="application/ld+json">${JSON.stringify(schema)}</script>`}
+	{/if}
 </svelte:head>
