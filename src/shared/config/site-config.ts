@@ -2,7 +2,7 @@ export const siteConfig = {
 	name: 'YouGPU',
 	url: 'https://yougpu.ru',
 	description:
-		'Аренда мощных GPU серверов с почасовой оплатой. Доступны NVIDIA A100, H100, H200, RTX 4090 и другие карты. Высокая производительность для обучения нейросетей, 3D-рендеринга и сложных вычислений. Быстрый старт.',
+		'Аренда GPU серверов с почасовой оплатой: NVIDIA A100, H100, H200, RTX 4090. Идеально для обучения нейросетей, ML и 3D-рендеринга.',
 	ogImage: 'https://yougpu.ru/og-image.jpg',
 	twitterHandle: '@yougpu',
 	keywords:
