@@ -17,7 +17,17 @@ const config = {
 		},
 		prerender: {
 			origin: 'https://yougpu.ru',
-			handleMissingId: 'warn'
+			handleMissingId: 'warn',
+			handleHttpError: ({ path, message }) => {
+				// Если ошибка 404 на картинке - просто выводим предупреждение и продолжаем билд
+				if (path === '/og-image.jpg') {
+					console.warn('⚠️ Игнорируем отсутствующую картинку OG');
+					return;
+				}
+
+				// Для всех остальных ошибок — падаем (как обычно)
+				throw new Error(message);
+			}
 		},
 		alias: {
 			'$app/*': 'src/app/*',
