@@ -16,6 +16,7 @@ const config = {
 			relative: false
 		},
 		prerender: {
+			origin: 'https://yougpu.ru',
 			handleMissingId: 'warn'
 		},
 		alias: {
