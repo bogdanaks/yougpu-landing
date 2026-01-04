@@ -40,6 +40,7 @@
 		<a
 			href={method.link}
 			target="_blank"
+			rel="noopener noreferrer"
 			class="group relative p-6 rounded-2xl border transition-all duration-300 flex flex-col items-start
       hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5
       bg-slate-900/50 border-slate-800 hover:border-slate-700"
