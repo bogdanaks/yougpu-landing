@@ -5,7 +5,7 @@
 	export let description =
 		'Арендуйте GPU с поминутной оплатой. Никакого шума, никаких счетов за свет.';
 	export let btnText = 'Найти сервер →';
-	export let link = `${appConfig.API_URL}/login`;
+	export let link = `${appConfig.CONSOLE_URL}/login`;
 </script>
 
 <div class="mt-8 p-6 bg-slate-900 border border-brand-500/30 rounded-xl text-center not-prose">
