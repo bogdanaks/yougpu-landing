@@ -17,6 +17,7 @@
 			<a href="#how-it-works" class="text-slate-400 transition-colors hover:text-white"
 				>Как это работает</a
 			>
+			<a href="/blog" class="text-slate-400 transition-colors hover:text-white">Блог</a>
 		</nav>
 
 		<div class="flex items-center gap-4">
