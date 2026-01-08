@@ -29,7 +29,7 @@
 				href={`${appConfig.CONSOLE_URL}/register`}
 				class="inline-flex h-12 items-center justify-center rounded-md bg-white px-8 text-base font-bold text-brand-600 transition-all hover:bg-slate-100 hover:shadow-lg hover:scale-105"
 			>
-				Создать аккаунт бесплатно
+				Создать аккаунт
 			</a>
 		</div>
 	</div>

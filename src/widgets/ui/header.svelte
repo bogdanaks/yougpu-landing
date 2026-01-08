@@ -1,5 +1,15 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import { appConfig } from '$shared/config/app-config';
+
+	function getNavLinkClass(path: string, exact = true) {
+		const currentPath = $page.url.pathname;
+		const isActive = exact ? currentPath === path : currentPath.startsWith(path);
+
+		const baseClasses = 'transition-colors hover:text-white';
+
+		return `${baseClasses} ${isActive ? 'text-white' : 'text-slate-400'}`;
+	}
 </script>
 
 <header class="sticky top-0 z-50 w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur-lg">
@@ -12,12 +22,13 @@
 		</a>
 
 		<nav class="hidden gap-8 text-sm font-medium md:flex">
-			<a href="#features" class="text-slate-400 transition-colors hover:text-white">Преимущества</a>
-			<a href="#pricing" class="text-slate-400 transition-colors hover:text-white">Цены</a>
-			<a href="#how-it-works" class="text-slate-400 transition-colors hover:text-white"
+			<a href="/#features" class="text-slate-400 transition-colors hover:text-white">Преимущества</a
+			>
+			<a href="/pricing" class={getNavLinkClass('/pricing/')}>Цены</a>
+			<a href="/#how-it-works" class="text-slate-400 transition-colors hover:text-white"
 				>Как это работает</a
 			>
-			<a href="/blog" class="text-slate-400 transition-colors hover:text-white">Блог</a>
+			<a href="/blog" class={getNavLinkClass('/blog/', false)}>Блог</a>
 		</nav>
 
 		<div class="flex items-center gap-4">

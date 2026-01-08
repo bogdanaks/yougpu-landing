@@ -42,6 +42,7 @@
 	"dependencies": {
 		"@tailwindcss/vite": "^4.1.18",
 		"big.js": "^7.0.1",
+		"currency.js": "^2.0.4",
 		"ky": "^1.14.1",
 		"lucide-svelte": "^0.561.0",
 		"tailwindcss": "^4.1.18"

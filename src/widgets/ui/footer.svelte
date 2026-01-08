@@ -19,8 +19,7 @@
 				<h3 class="text-sm font-semibold text-white">Продукт</h3>
 				<ul class="mt-4 space-y-3 text-sm text-slate-400">
 					<li><a href="#features" class="hover:text-white transition-colors">Преимущества</a></li>
-					<li><a href="#pricing" class="hover:text-white transition-colors">Цены</a></li>
-					<!-- <li><a href="/docs" class="hover:text-white transition-colors">Документация</a></li> -->
+					<li><a href="/pricing" class="hover:text-white transition-colors">Цены</a></li>
 				</ul>
 			</div>
 			<div>

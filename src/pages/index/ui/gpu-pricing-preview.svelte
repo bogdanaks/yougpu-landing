@@ -17,10 +17,7 @@
 	<div class="container mx-auto px-4 md:px-6 relative z-10">
 		<div class="text-center mb-16">
 			<h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Популярные конфигурации</h2>
-			<p class="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">
-				Примеры доступных GPU и ориентировочные цены за час. Актуальное наличие проверяйте в
-				консоли.
-			</p>
+			<p class="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">Доступные GPU и цены за час.</p>
 		</div>
 
 		<div
@@ -73,7 +70,7 @@
 			</div>
 			<div class="bg-slate-900/50 p-4 text-center border-t border-slate-800">
 				<a
-					href={`${appConfig.CONSOLE_URL}/login`}
+					href="/pricing"
 					class="text-brand-400 hover:text-brand-300 text-sm font-medium transition-colors"
 				>
 					Посмотреть весь каталог и наличие →
