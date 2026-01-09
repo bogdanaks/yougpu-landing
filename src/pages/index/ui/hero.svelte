@@ -26,7 +26,7 @@
 
 		<p class="mx-auto mt-6 max-w-2xl text-lg text-slate-400 md:text-xl">
 			Арендуйте A100, H100, RTX 4090 и другие GPU от проверенных провайдеров в одном интерфейсе.
-			Прозрачный почасовой биллинг. Деплой за минуты.
+			Прозрачный поминутный биллинг. Деплой за минуты.
 		</p>
 
 		<div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -61,7 +61,7 @@
 				<div class="mt-1 text-sm text-slate-400">Время деплоя</div>
 			</div>
 			<div>
-				<div class="text-3xl font-bold text-white">30 ₽/ч</div>
+				<div class="text-3xl font-bold text-white">20 ₽/ч</div>
 				<div class="mt-1 text-sm text-slate-400">Цены от</div>
 			</div>
 		</div>

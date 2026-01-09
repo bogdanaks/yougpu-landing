@@ -1,6 +1,18 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { appConfig } from '$shared/config/app-config';
+	import { Menu, X } from 'lucide-svelte';
+	import { slide } from 'svelte/transition';
+
+	let isMenuOpen = false;
+
+	function toggleMenu() {
+		isMenuOpen = !isMenuOpen;
+	}
+
+	function closeMenu() {
+		isMenuOpen = false;
+	}
 
 	function getNavLinkClass(path: string, exact = true) {
 		const currentPath = $page.url.pathname;
@@ -39,6 +51,35 @@
 			>
 				Запустить консоль
 			</a>
+			<button
+				class="text-slate-400 hover:text-white md:hidden focus:outline-none"
+				on:click={toggleMenu}
+				aria-label="Toggle menu"
+			>
+				{#if isMenuOpen}
+					<X class="h-6 w-6" />
+				{:else}
+					<Menu class="h-6 w-6" />
+				{/if}
+			</button>
 		</div>
 	</div>
+
+	{#if isMenuOpen}
+		<div
+			transition:slide={{ duration: 200 }}
+			class="border-b border-slate-800 bg-slate-950 md:hidden"
+		>
+			<nav class="container mx-auto flex flex-col gap-4 p-4 text-sm font-medium">
+				<a href="/#features" class="text-slate-400 hover:text-white" on:click={closeMenu}>
+					Преимущества
+				</a>
+				<a href="/pricing" class={getNavLinkClass('/pricing/')} on:click={closeMenu}> Цены </a>
+				<a href="/#how-it-works" class="text-slate-400 hover:text-white" on:click={closeMenu}>
+					Как это работает
+				</a>
+				<a href="/blog" class={getNavLinkClass('/blog/', false)} on:click={closeMenu}> Блог </a>
+			</nav>
+		</div>
+	{/if}
 </header>

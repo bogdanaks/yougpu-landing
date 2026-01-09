@@ -23,7 +23,7 @@
 						<h1 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
 							Условия использования (Публичная оферта)
 						</h1>
-						<p class="text-sm text-gray-500">Последнее обновление: 21 декабря 2025</p>
+						<p class="text-sm text-gray-500">Последнее обновление: 09 января 2026</p>
 					</div>
 
 					<p class="text-sm italic text-gray-700">
@@ -57,7 +57,7 @@
 							>
 						</li>
 						<li>
-							<span>Тарификация производится почасово.</span>
+							<span>Тарификация производится поминутно.</span>
 						</li>
 					</ul>
 				</section>

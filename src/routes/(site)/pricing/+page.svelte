@@ -87,7 +87,7 @@
 				Прозрачное ценообразование
 			</h1>
 			<p class="text-lg text-slate-400">
-				Никаких скрытых платежей. Платите только за время использования GPU. Секундная тарификация и
+				Никаких скрытых платежей. Платите только за время использования GPU. Минутная тарификация и
 				мгновенный доступ к мощностям.
 			</p>
 		</div>
@@ -165,7 +165,7 @@
 											</span>
 											<span class="flex items-center gap-2">
 												<span class="w-16 text-slate-500 text-xs uppercase tracking-wider"
-													>Count</span
+													>Кол-во</span
 												>
 												<span>x{offer.model.gpu_count}</span>
 											</span>
@@ -205,7 +205,7 @@
 
 									<td class="px-6 py-5 text-right">
 										<a
-											href={`${appConfig.CONSOLE_URL}/deploy?offer=${offer.id}`}
+											href={`${appConfig.CONSOLE_URL}/instances/offer/${offer.id}`}
 											class={`inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition-all border-2 border-brand-800 text-white hover:border-brand-600 `}
 										>
 											Арендовать
