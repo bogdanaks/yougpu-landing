@@ -8,7 +8,6 @@ export async function load({ params }) {
 			content: post.default,
 			meta: post.metadata
 		};
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	} catch (e) {
 		console.log('e', e);
 		throw error(404, 'Статья не найдена');

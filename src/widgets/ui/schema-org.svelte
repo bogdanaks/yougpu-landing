@@ -3,7 +3,7 @@
 	import { siteConfig } from '$shared/config/site-config';
 
 	const LOGO_URL = `${siteConfig.url}/logo512.png`;
-	const OG_IMAGE = `${siteConfig.url}/og-image.jpg`;
+	const OG_IMAGE = `${siteConfig.url}/og-image.png`;
 
 	$: currentUrl = $page.url.href;
 
@@ -40,7 +40,7 @@
 				'@id': `${siteConfig.url}/#website`,
 				url: siteConfig.url,
 				name: 'YouGPU — Аренда GPU серверов',
-				description: 'Мощные серверы с NVIDIA RTX 4090 и A100 для AI и рендеринга.',
+				description: 'Мощные серверы с NVIDIA RTX 4090 и A100 для AI.',
 				publisher: { '@id': `${siteConfig.url}/#organization` },
 				inLanguage: 'ru-RU'
 			},

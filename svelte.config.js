@@ -55,7 +55,7 @@ const config = {
 			handleMissingId: 'warn',
 			handleHttpError: ({ path, message }) => {
 				// Если ошибка 404 на картинке - просто выводим предупреждение и продолжаем билд
-				if (path === '/og-image.jpg') {
+				if (path === '/og-image.png') {
 					console.warn('⚠️ Игнорируем отсутствующую картинку OG');
 					return;
 				}

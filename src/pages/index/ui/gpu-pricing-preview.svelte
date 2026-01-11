@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { appConfig } from '$shared/config/app-config';
 	import { CircleCheck, CircleX } from 'lucide-svelte';
 
 	type GpuModel = {
@@ -8,6 +7,7 @@
 		price: string;
 		available: boolean;
 		popular: boolean;
+		slug?: string;
 	};
 
 	export let gpuModels: GpuModel[] = [];
@@ -41,7 +41,7 @@
 									: ''}"
 							>
 								<td class="px-6 py-4 font-medium text-white flex items-center gap-2">
-									{gpu.name}
+									<a href={gpu.slug ? `/gpu/${gpu.slug}` : undefined}>{gpu.name}</a>
 									{#if gpu.popular}
 										<span
 											class="inline-flex items-center rounded-full bg-brand-500/20 px-2 py-0.5 text-xs font-medium text-brand-300"

@@ -64,11 +64,20 @@
 		available: boolean;
 		popular: boolean;
 		regions: string[];
+		slug?: string;
 	}[] = $state([]);
 	let isLoading = $state(true);
 	let error: unknown | null = $state(null);
 
 	const LANDING_MODELS = ['H100', 'A100 80GB', 'H200', 'B200', 'RTX 6000 Ada', 'RTX A6000'];
+	const SLUG_MODELS = {
+		H100: 'h100',
+		'A100 80GB': 'a100',
+		H200: 'h200',
+		B200: 'b200',
+		'RTX 6000 Ada': 'rtx-6000-ada',
+		'RTX A6000': 'rtx-a6000'
+	};
 
 	async function loadPrices() {
 		try {
@@ -128,7 +137,9 @@
 						vram: vramDisplay,
 						available: group.hasAvailability,
 						popular: ['H100', 'A100 80GB', 'H200'].includes(group.name),
-						regions: Array.from(group.regions)
+						regions: Array.from(group.regions),
+						// @ts-ignore
+						slug: SLUG_MODELS?.[group.name] ?? undefined
 					};
 				})
 				.sort((a, b) => LANDING_MODELS.indexOf(a.name) - LANDING_MODELS.indexOf(b.name));

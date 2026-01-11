@@ -6,11 +6,11 @@
 	<div class="container mx-auto px-4 md:px-6 lg:grid lg:grid-cols-3 lg:gap-8">
 		<div class="space-y-4 mb-8 lg:mb-0">
 			<a href="/" class="flex items-center gap-2 text-lg font-bold tracking-tight">
-				<img alt="Logo" src="/favicon.svg" width="32" height="32" />
+				<img alt="Logo" src="/logo.svg" width="32" height="32" />
 				<span class="text-white">YouGPU</span>
 			</a>
 			<p class="text-sm text-slate-400 max-w-xs">
-				Агрегатор вычислительных мощностей для AI, ML и рендеринга. Мы делаем GPU доступнее.
+				Агрегатор вычислительных мощностей для AI и ML. Мы делаем GPU доступнее.
 			</p>
 		</div>
 
