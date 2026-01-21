@@ -1,11 +1,12 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { appConfig } from '$shared/config/app-config';
-	import { CircleX, Search, ArrowRight, Loader2 } from 'lucide-svelte';
-	import { formatMoney } from '$shared/lib/utils';
+	import { onMount } from "svelte";
+	import { appConfig } from "$shared/config/app-config";
+	import { CircleX, Search, ArrowRight, Loader2 } from "lucide-svelte";
+	import { formatMoney } from "$shared/lib/utils";
+	import Seo from "$widgets/ui/seo.svelte";
 
 	interface ServerResponse<T> {
-		status: 'success';
+		status: "success";
 		code: number;
 		data: T | null;
 		meta?: Record<string, unknown>;
@@ -44,24 +45,24 @@
 	let offers: InstanceOffer[] = [];
 	let isLoading = true;
 	let error: string | null = null;
-	let searchQuery = '';
+	let searchQuery = "";
 
 	async function loadPrices() {
 		try {
 			const response = await fetch(`${appConfig.API_URL}/catalog/offer`);
 
-			if (!response.ok) throw new Error('Ошибка сети');
+			if (!response.ok) throw new Error("Ошибка сети");
 
 			const result: ServerResponse<InstanceOffer[]> = await response.json();
 
-			if (result.status === 'success' && result.data) {
+			if (result.status === "success" && result.data) {
 				offers = result.data;
 			} else {
-				throw new Error('Некорректный формат ответа');
+				throw new Error("Некорректный формат ответа");
 			}
 		} catch (err) {
 			console.error(err);
-			error = 'Не удалось загрузить данные. Попробуйте позже.';
+			error = "Не удалось загрузить данные. Попробуйте позже.";
 		} finally {
 			isLoading = false;
 		}
@@ -77,6 +78,8 @@
 			offer.model.gpu_model.toLowerCase().includes(searchQuery.toLowerCase())
 	);
 </script>
+
+<Seo title="Цены" />
 
 <div class="min-h-screen bg-slate-950 text-white relative overflow-hidden">
 	<div aria-hidden="true" class="absolute inset-0 z-0 overflow-hidden pointer-events-none"></div>

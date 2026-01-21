@@ -1,11 +1,13 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { Home, ServerCrash, ArrowRight } from 'lucide-svelte';
-	import { appConfig } from '$shared/config/app-config';
+	import { page } from "$app/stores";
+	import { Home, ServerCrash, ArrowRight } from "lucide-svelte";
+	import { appConfig } from "$shared/config/app-config";
+	import Seo from "$widgets/ui/seo.svelte";
 </script>
 
+<Seo title="Страница не найдена" />
+
 <svelte:head>
-	<title>Страница не найдена | YouGPU</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
@@ -74,7 +76,7 @@
 				</div>
 				<div class="mt-1 text-red-400">
 					Error: {$page.status}
-					{$page.error?.message || 'Not Found'}
+					{$page.error?.message || "Not Found"}
 				</div>
 				<div class="mt-1 text-slate-500">Looking for available GPU nodes...</div>
 				<div class="mt-1 flex gap-2">
