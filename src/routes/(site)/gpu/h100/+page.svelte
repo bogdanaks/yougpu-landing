@@ -80,7 +80,7 @@
 
 		<div class="mt-10 flex flex-col items-center justify-center gap-6">
 			<div class="flex items-baseline gap-2">
-				<span class="text-4xl font-bold text-white">~290 ₽</span>
+				<span class="text-4xl font-bold text-white">~310 ₽</span>
 				<span class="text-slate-500">/ час</span>
 			</div>
 
