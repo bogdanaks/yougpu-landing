@@ -1,24 +1,7 @@
 <script lang="ts">
-	import { appConfig } from "$shared/config/app-config";
-	import {
-		Cpu,
-		Zap,
-		ArrowRight,
-		BarChart3,
-		Layers,
-		Server,
-		Database,
-		Scale,
-		Check
-	} from "lucide-svelte";
-
-	// Бенчмарки: акцент на пропускную способность памяти по сравнению с версией 40GB
-	const benchmarks = [
-		{ name: "Memory Bandwidth", value: 100, label: "2.039 GB/s", sub: "A100 80GB" },
-		{ name: "Memory Bandwidth", value: 75, label: "1.555 GB/s", sub: "A100 40GB" },
-		{ name: "Large Model Fine-Tuning", value: 100, label: "100% eff.", sub: "A100 80GB" },
-		{ name: "Large Model Fine-Tuning", value: 50, label: "OOM Error", sub: "RTX 4090" } // Out Of Memory
-	];
+	import { appConfig, YANDEX_METRICA_TARGETS } from "$shared/config/app-config";
+	import { reachGoal } from "$shared/lib/analytics";
+	import { ArrowRight, Layers, Server, Database, Scale, Check } from "lucide-svelte";
 
 	const specs = [
 		{ label: "Архитектура", value: "NVIDIA Ampere" },
@@ -43,6 +26,10 @@
 			desc: "Обработка табличных данных (RAPIDS) и графовых нейросетей, требующих большой памяти."
 		}
 	];
+
+	const handleCTAClick = () => {
+		reachGoal(YANDEX_METRICA_TARGETS.RENT_A100);
+	};
 </script>
 
 <svelte:head>
@@ -88,6 +75,7 @@
 			<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
 				<a
 					href={`${appConfig.CONSOLE_URL}/instances/`}
+					on:click={handleCTAClick}
 					class="inline-flex h-12 items-center justify-center rounded-md bg-brand-600 px-8 text-base font-semibold text-white transition-all hover:bg-brand-500 hover:shadow-lg hover:shadow-brand-500/25 w-full sm:w-auto"
 				>
 					Арендовать A100
@@ -242,6 +230,7 @@
 		</p>
 		<a
 			href={`${appConfig.CONSOLE_URL}/instances/`}
+			on:click={handleCTAClick}
 			class="inline-flex h-14 items-center justify-center rounded-lg cursor-pointer bg-brand-600 px-10 text-lg font-bold text-white transition-all hover:bg-brand-500 hover:shadow-lg hover:shadow-brand-500/25"
 		>
 			Запустить A100

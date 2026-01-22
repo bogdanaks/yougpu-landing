@@ -1,18 +1,17 @@
 <script lang="ts">
-	import { appConfig } from "$shared/config/app-config";
+	import { appConfig, YANDEX_METRICA_TARGETS } from "$shared/config/app-config";
+	import { reachGoal } from "$shared/lib/analytics";
 	import {
 		Cpu,
 		Zap,
 		ArrowRight,
 		BarChart3,
 		Layers,
-		CheckCircle2,
 		Microchip,
 		BrainCircuit,
 		Scale
 	} from "lucide-svelte";
 
-	// Данные для бенчмарков (относительная производительность)
 	const benchmarks = [
 		{ name: "LLM Training (GPT-3)", h100: 100, a100: 30, label: "3.5x быстрее" },
 		{ name: "Inference (Large Models)", h100: 100, a100: 25, label: "4x быстрее" },
@@ -42,6 +41,10 @@
 			desc: "Ускорение геномики, квантовой химии и прогнозирования климата."
 		}
 	];
+
+	const handleCTAClick = () => {
+		reachGoal(YANDEX_METRICA_TARGETS.RENT_H100);
+	};
 </script>
 
 <svelte:head>
@@ -87,6 +90,7 @@
 			<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
 				<a
 					href={`${appConfig.CONSOLE_URL}/instances/`}
+					on:click={handleCTAClick}
 					class="inline-flex h-12 items-center justify-center rounded-md bg-brand-600 px-8 text-base font-semibold text-white transition-all hover:bg-brand-500 hover:shadow-lg hover:shadow-brand-500/25 w-full sm:w-auto"
 				>
 					Арендовать H100
@@ -254,6 +258,7 @@
 		</p>
 		<a
 			href={`${appConfig.CONSOLE_URL}/instances/`}
+			on:click={handleCTAClick}
 			class="inline-flex h-14 items-center justify-center rounded-lg cursor-pointer bg-brand-600 px-10 text-lg font-bold text-white transition-all hover:bg-brand-500 hover:shadow-lg hover:shadow-brand-500/25"
 		>
 			Запустить H100
